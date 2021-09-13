@@ -8,9 +8,14 @@ loadProducts();
 
 // show all product in UI 
 const showProducts = (products) => {
+  /* show ratings in the UI */
+
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
     const image = product.image;
+
+    // const productRatingOutput = rateProduct(product.rating.rate)
+
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML = `
@@ -20,6 +25,8 @@ const showProducts = (products) => {
       </div>
       <h4>${product.title}</h4>
       <p>Category: ${product.category}</p>
+      <p>Rate: ${product.rating.rate}</p>
+      
       <h2>Price: $ ${product.price}</h2>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
       <button id="details-btn" class="btn btn-danger">Details</button>
@@ -27,7 +34,27 @@ const showProducts = (products) => {
       `;
     document.getElementById("all-products").appendChild(div);
   }
+
+  // function rateProduct(rating) {
+  //   console.log(rating)
+  //   let star = `<i class="fas fa-star"></i>`
+  //   let halfStar = `<i class="fas fa-star-half-alt"></i>`
+    
+  //   let productRating = 1;
+  //   productRating == 5 ?document.getElementById('rating').innerHTML = `${star.repeat(rating)}`
+  //   : productRating >= 4.5 ?document.getElementById('rating').innerHTML = `${star.repeat(rating)}${halfStar}`
+  //   : productRating == 4 ?document.getElementById('rating').innerHTML = `${star.repeat(rating)}`
+  //   : productRating >= 3.5 ?document.getElementById('rating').innerHTML = `${star.repeat(rating)}${halfStar}`
+  //   : productRating == 3 ?document.getElementById('rating').innerHTML = `${star.repeat(rating)}`
+  //   : productRating >= 2.5 ?document.getElementById('rating').innerHTML = `${star.repeat(rating)}${halfStar}`
+  //   : productRating == 2 ?document.getElementById('rating').innerHTML = `${star.repeat(rating)}`
+  //   : productRating >= 1.5 ?document.getElementById('rating').innerHTML = `${star.repeat(rating)}${halfStar}`
+  //   : productRating == 1 ?document.getElementById('rating').innerHTML = `${star.repeat(rating)}`
+  //   :`${halfStar}`
+  // }
+
 };
+
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
