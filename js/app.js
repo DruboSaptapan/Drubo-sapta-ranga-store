@@ -20,36 +20,20 @@ const showProducts = (products) => {
       <div class="my-3">
         <img class="product-image" src=${image}></img>
       </div>
-      <h4>${product.title}</h4>
-      <p>Category: ${product.category}</p>
-      <p>Rate: ${product.rating.rate}</p>
-      
-      <h2>Price: $ ${product.price}</h2>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
+      <h5>${product.title}</h5>
+      <p class="m-0">Category: ${product.category}</p>      
+          <div >
+            <p class="m-0">Average rating: ${product.rating.rate} <i class="fas fa-star text-warning"></i></p>
+          </div>
+      <p class="m-0">Customer rating: (${product.rating['count']} Reviews)</p>
+      <h5 class="my-3">Price: $${product.price}</h5>
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">Add to Cart</button>
       <button id="details-btn" class="btn btn-danger">Details</button>
     </div>
-      `;
+    `;
+
     document.getElementById("all-products").appendChild(div);
   }
-
-  // function rateProduct(rating) {
-  //   console.log(rating)
-  //   let star = `<i class="fas fa-star"></i>`
-  //   let halfStar = `<i class="fas fa-star-half-alt"></i>`
-    
-  //   let productRating = 1;
-  //   productRating == 5 ?document.getElementById('rating').innerHTML = `${star.repeat(rating)}`
-  //   : productRating >= 4.5 ?document.getElementById('rating').innerHTML = `${star.repeat(rating)}${halfStar}`
-  //   : productRating == 4 ?document.getElementById('rating').innerHTML = `${star.repeat(rating)}`
-  //   : productRating >= 3.5 ?document.getElementById('rating').innerHTML = `${star.repeat(rating)}${halfStar}`
-  //   : productRating == 3 ?document.getElementById('rating').innerHTML = `${star.repeat(rating)}`
-  //   : productRating >= 2.5 ?document.getElementById('rating').innerHTML = `${star.repeat(rating)}${halfStar}`
-  //   : productRating == 2 ?document.getElementById('rating').innerHTML = `${star.repeat(rating)}`
-  //   : productRating >= 1.5 ?document.getElementById('rating').innerHTML = `${star.repeat(rating)}${halfStar}`
-  //   : productRating == 1 ?document.getElementById('rating').innerHTML = `${star.repeat(rating)}`
-  //   :`${halfStar}`
-  // }
-
 };
 
 let count = 0;
