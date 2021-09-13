@@ -11,8 +11,6 @@ const showProducts = (products) => {
   for (const product of allProducts) {
     const image = product.image;
 
-    // const productRatingOutput = rateProduct(product.rating.rate)
-
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML = `
