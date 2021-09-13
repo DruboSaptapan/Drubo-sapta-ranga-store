@@ -55,7 +55,7 @@ body {
 }
 .cart {
   width: 350px;
-  border: 2px solid #FF6F96;
+  border: 2px solid gray;
   padding: 10px;
   box-shadow: 5px 2px 15px gray;
   border-radius: 5px;
